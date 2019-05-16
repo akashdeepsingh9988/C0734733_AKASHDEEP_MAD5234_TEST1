@@ -90,4 +90,21 @@ public class TestBlazeDemo {
 
     }
 
+    @Test
+    public void testcheckFlight12() {
+        // get the row for flight 12 to get all data
+        WebElement flight = driver.findElement(By.name("VA12"));
+        
+        // getting price from hidden form 
+        WebElement price = driver.findElement(By.name("price"));
+        String val = price.getText();
+        assertEquals("765.32", val);
+        
+        // get depart time from flight data
+        
+        
+        
+        
+    }
+
 }
