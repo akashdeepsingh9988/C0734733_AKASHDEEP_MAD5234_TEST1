@@ -22,6 +22,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.support.ui.Select;
 
 /**
  *
@@ -59,5 +60,18 @@ public class TestBlazeDemo {
         	WebElement link = driver.findElement(By.linkText("destination of the week! The Beach!"));
 		link.click();
     }
+    
+     @Test
+    public void testDepratureCities() {
+        
+        Select selectDropdown = new Select(driver.findElement(By.name("fromPort")));
+        List<WebElement> listOptionDropdown = selectDropdown.getOptions();
+        int result = listOptionDropdown.size();
+        assertEquals(7, result);
+    }
+    
+    
+    
+    
 
 }
