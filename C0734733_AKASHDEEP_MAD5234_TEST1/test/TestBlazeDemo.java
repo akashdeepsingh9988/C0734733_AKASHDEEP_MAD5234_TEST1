@@ -54,13 +54,13 @@ public class TestBlazeDemo {
     }
 // http://blazedemo.com/vacation.html
 
-    @Test
-    public void testdestinationForWeek() {
-        
-        	WebElement link = driver.findElement(By.linkText("destination of the week! The Beach!"));
-		link.click();
-    }
-    
+//    @Test
+//    public void testdestinationForWeek() {
+//        
+//        	WebElement link = driver.findElement(By.linkText("destination of the week! The Beach!"));
+//		link.click();
+//    }
+//    
      @Test
     public void testDepratureCities() {
         
@@ -68,9 +68,20 @@ public class TestBlazeDemo {
         List<WebElement> listOptionDropdown = selectDropdown.getOptions();
         int result = listOptionDropdown.size();
         assertEquals(7, result);
+       
+        
+        // navigating page to flights page
+        driver.navigate().to("http://blazedemo.com/reserve.php");
+        
+        // finding flight information
+        
+        
+        
+       
     }
     
     
+      
     
     
 
