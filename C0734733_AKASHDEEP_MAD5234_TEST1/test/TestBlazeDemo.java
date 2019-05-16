@@ -94,17 +94,27 @@ public class TestBlazeDemo {
     public void testcheckFlight12() {
         // get the row for flight 12 to get all data
         WebElement flight = driver.findElement(By.name("VA12"));
-        
+
         // getting price from hidden form 
         WebElement price = driver.findElement(By.name("price"));
         String val = price.getText();
         assertEquals("765.32", val);
-        
+
         // get depart time from flight data
+        // Grab the table 
         
         
-        
-        
+        // TESTING CODE TO GET TABLE DATA 
+        // VA12 IS A ROOT ELEMENT FOR TR WITH SPECIFIC NAME 
+        WebElement table = driver.findElement(By.name("VA12"));
+        List<WebElement> allRows = table.findElements(By.tagName("tr"));
+        for (WebElement row : allRows) {
+            List<WebElement> cells = row.findElements(By.tagName("td"));
+            for (WebElement cell : cells) {
+                System.out.println(cell.getText());
+           
+        }}
+
     }
 
 }
