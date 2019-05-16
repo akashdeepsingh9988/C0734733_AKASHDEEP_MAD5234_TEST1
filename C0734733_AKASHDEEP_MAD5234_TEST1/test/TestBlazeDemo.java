@@ -54,35 +54,40 @@ public class TestBlazeDemo {
     }
 // http://blazedemo.com/vacation.html
 
-//    @Test
-//    public void testdestinationForWeek() {
-//        
-//        	WebElement link = driver.findElement(By.linkText("destination of the week! The Beach!"));
-//		link.click();
-//    }
+    @Test
+    public void testdestinationForWeek() {
+
+        WebElement link = driver.findElement(By.linkText("destination of the week! The Beach!"));
+        link.click();
+    }
 //    
-     @Test
+
+    @Test
     public void testDepratureCities() {
-        
+
         Select selectDropdown = new Select(driver.findElement(By.name("fromPort")));
         List<WebElement> listOptionDropdown = selectDropdown.getOptions();
         int result = listOptionDropdown.size();
         assertEquals(7, result);
-       
-        
+
         // navigating page to flights page
         driver.navigate().to("http://blazedemo.com/reserve.php");
-        
+
         // finding flight information
-        
-        
-        
-       
+        //WebElement form = driver.findElement(By.name("VA12"));
+        // form.getAttribute("td")
     }
-    
-    
-      
-    
-    
+
+    @Test
+    public void testVirginFlight43() {
+
+        WebElement button = driver.findElement(By.name("VA43"));
+        button.click();
+        // check if button clicked or not 
+        // if not then test fail
+        // otherwise test pass
+        assertEquals(true, button.isSelected());
+
+    }
 
 }
