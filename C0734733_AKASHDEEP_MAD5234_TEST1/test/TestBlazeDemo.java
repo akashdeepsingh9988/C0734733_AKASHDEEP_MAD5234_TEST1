@@ -51,24 +51,13 @@ public class TestBlazeDemo {
         TimeUnit.SECONDS.sleep(1);		// OPTION 2
         driver.close();
     }
-
-    
-        @Test
-    public void testNumberofLinks() {
-
+// http://blazedemo.com/vacation.html
 
     @Test
-    public void testNumberofLinks() {
-
-        // Get the links in the list
-        List<WebElement> listOfLinks = driver.findElements(By.cssSelector("table+ul li a"));
-
-        // Count the number of links
-        int numLinks = listOfLinks.size();
-
-        // Check if number of links = 10
-        assertEquals(10, numLinks);
-
+    public void testdestinationForWeek() {
+        
+        	WebElement link = driver.findElement(By.linkText("destination of the week! The Beach!"));
+		link.click();
     }
 
 }
